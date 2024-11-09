@@ -8,5 +8,5 @@ CLI Implementations of common memory/numercy tests seen in hiring tests and inte
 
 # List of games
 ## Numeracy
-* Digitspan (digitspan.py): Test your working memory of numerical sequences. Inspired by Hirevue's Digitspan game
+* Digitspan (digitspan.py): Test your working memory of numerical sequences.
 * Testpower (testpower.py): Test your knowledge of common powers. The app shows how close your guess is to the actual value.
