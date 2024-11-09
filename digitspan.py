@@ -1,7 +1,6 @@
 import random
 import time
 import keyboard
-import os
 
 
 def present_sequence(sequence):
