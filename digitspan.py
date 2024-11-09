@@ -1,11 +1,13 @@
 import random
 import time
+import keyboard
 import os
 
 
 def present_sequence(sequence):
     """Present the sequence to the user one digit at a time."""
     print("Memorize this sequence:")
+    time.sleep(1)
     for digit in sequence:
         print(digit, end=" ", flush=True)
         time.sleep(1)  # Display each digit for 1 second
@@ -25,9 +27,21 @@ def main():
     digits = list(range(10))
     sequence_length = 3
     correct_streak = 0
+    score = 0
+    attempt_count = 0
     reverse_order = False
 
+    print(100*'=')
+    print("Welcome to Digit Span!!!")
+    print(100*'=')
+    print(2*'\n')
+    print("Press any key to start...")
+    keyboard.read_event(suppress=True)
+    print(10*'\n')
+
+
     while True:
+        attempt_count +=1
         # Generate a random sequence of the current length
         sequence = random.sample(digits, sequence_length)
         present_sequence(sequence)
@@ -41,7 +55,8 @@ def main():
 
         # Check if the response matches the sequence
         if response == correct_sequence:
-            print("Correct!\n")
+            score +=1
+            print(f"Correct!\nScore = {score}")
             correct_streak += 1
             if correct_streak == 2:
                 # Increase sequence length after two correct responses
@@ -52,6 +67,7 @@ def main():
                 )
                 if sequence_length == 6 and not reverse_order:
                     reverse_order = True
+                    sequence_length = 3
                     print("Now, recall the sequences in reverse order.\n")
         else:
             print(f"Incorrect. The correct sequence was: {correct_sequence}\n")
@@ -60,7 +76,10 @@ def main():
         # Ask if the user wants to continue
         continue_test = input("Do you want to continue? (y/n): ").strip().lower()
         if continue_test != "y":
-            print("Thank you for practicing the Digit Span test!")
+            print("Thank you for practicing the Digit Span test!\n")
+            print(100*'-')
+            print(f"Attempted questions = {attempt_count}\nCorrect answers = {score}")
+            print(100*'-')
             break
 
 
