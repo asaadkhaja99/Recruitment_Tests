@@ -1,9 +1,9 @@
 # Recruitment_Games
-CLI Implementations of common memory/numercy tests seen in hiring tests and interviews
+CLI Implementations of common memory/numeracy tests seen in hiring tests and interviews
 
 # Setup
 
-* Fork the repository into your working directory
+* Clone the repository into your working directory
 * Run the .py file of the game that you would like to practice
 
 # List of games
